@@ -1,0 +1,52 @@
+
+CLASES:
+    Declaración básica:
+        ex:
+            class Person {
+                name= 'Carlos';
+                talk() {
+                    console.log(this.name);
+                }
+            }
+    
+    Instaciación:
+        ex:
+            const charly = new Person();
+
+    Herencia:
+        ex:
+            class CarlosThing {
+                owner = 'Carlos';
+            }
+
+            class Thing extends from CarlosThing {
+                talk() {
+                    console.log('owned by: ' + this.owner);
+                }
+            }
+    
+    Constructor: Es una función por defecto que se ejecuta al instanciar un objeto de esa clase:
+        ex:
+            class CarlosThing {
+                constructor (){
+                    this.owner = 'Carlos';
+                }
+            }
+        
+        Si utilizo un constructor en una clase que hereda y quiero ejecutar también el constructor del padre tengo que llamarlo con 'super':
+            ex:
+                class CarlosThing {
+                    constructor() {
+                        this.owner = 'Carlos';
+                    }
+                }
+
+                class Thing{
+                    constructor(){
+                        super();
+                        this.name = 'Cosa';
+                    }
+                    talk(){
+                        console.log('Owned by: ' + this.owner);
+                    }
+                }

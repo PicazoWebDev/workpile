@@ -1,0 +1,40 @@
+Import & export:
+    Cuando lo usamos hay dos casos posibles -con default y sin default.
+
+    Con default:
+    En el archivo donde declaramos el 'export' solo exportamos un elemento. Este elemento tiene asociado una variable que se referencia en el export precedido de 'default'.
+        ex:
+            const person = () => {
+                name: 'Max'
+            }
+            export default person;
+    En este caso, al importarlo siempre vamos a importar el mismo elemento, por lo que NO es necesario llamarlo por su 'nombre de pila' (person). Además lo importaremos sin encerrar el nombre que le vamos a dar entre {}
+    Al importarlo podemos hacerlo de las siguientes maneras:
+        ex:
+            import person from './person.js';
+        ex:
+            import persona from './person.js';
+    
+    Sin default:
+    En el archivo donde declaramos los 'export' exportamos varios elementos, cada uno con su sentencia export.
+        ex:
+            export const person = () => {
+                talk: () => {...}
+            }
+            export const dog = () => {
+                bark: () => {...}
+            }
+    Por eso, al importarlo SÍ es necesario indicar el 'nombre de pila' del elemento específico y encerrarlo entre {}.
+        ex:
+            import {person} from './family.js';
+            import {dog} from './family.js';
+        ex:
+            import {person, dog} from './family.js';
+    Si queremos utilizarlo con otro nombre donde lo importamos tenemos que asignarle un alias:
+        ex:
+            import {person as persona, dog as perro} from './family.js';
+    Cuando tenemos varios elementos también podemos importalos como un objeto con propiedades:
+        ex:
+            import * as familia form '.family.js';
+            familia.person.talk();
+            familia.dog.bark();

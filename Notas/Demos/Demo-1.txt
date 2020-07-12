@@ -1,0 +1,7 @@
+Como primera demo:
+
+    1: Descargar create-react-app
+    2: Crear la primera aplicación y arrancarla.
+    3: Crear un archivo JS con una clase Task
+    4: Importar esa clase en app.js
+    5: Instanciar una task y utilizar sus atributos en el JSX de APP
