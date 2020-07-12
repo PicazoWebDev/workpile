@@ -1,0 +1,12 @@
+
+Desestructurar un objeto es convertir un array o un objeto en un conjunto de variables.
+
+    ex:
+        [a,b] = ['Hola', 'Carlos'];
+        console.log(a); // -> 'Hola'
+        console.log(b); // -> 'Carlos'
+
+    ex:
+        {name, age} = {name: 'Carlos', age: 35}
+        console.log(name); // -> 'Carlos'
+        console.log(age); // -> 35

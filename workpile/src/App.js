@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-/* DEMO 1 */
 import Task from "./Task";
-/* ------ */
 
 class App extends Component {
   render() {
@@ -17,9 +15,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        {/* DEMO 1 */}
         <p>Tarea: {task.name}</p>
-        {/* ------ */}
       </div>
     );
   }

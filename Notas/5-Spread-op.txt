@@ -1,0 +1,23 @@
+El operador spread/rest son tres puntos: ... y se aplica a arrays y objetos para obtener su contenido.
+
+    ex:
+        let a = [1, 2, 3]
+        console.log([...a, 4, 5]) //-> [1, 2, 3, 4, 5]
+    ex:
+        let o = {
+            name: 'Carlos',
+            age: '35'
+        };
+
+        let oo = {
+            ...o,
+            skills: ['web styles', 'react']
+        }
+
+        console.log(oo) // -> {name: 'Carlos', age: '35', skills: ['web styles', 'react']}
+
+También sirve para pasar una lista de argumentos a un array.
+    ex:
+        function Foo (...args) {
+            console.log(args); // -> [arg1, arg2, ...]
+        }

@@ -1,0 +1,33 @@
+Utilizando la librería de Babel podemos utilizar funcionalidades que todavía no forman parte de ES6 (o que no aplican a todos los navegadores).
+
+Con ella podemos ignorar los constructores al inicio de la clase, así como la llamada a super en caso de herencia.
+Además podemos definir los métodos como atributos cuyo valor es un ()=>
+    ex: 
+        ANTES:
+        class CarlosThing {
+            constructor() {
+                this.owner = 'Carlos';
+            }
+        }
+
+        class Thing{
+            constructor(){
+                super();
+                this.name = 'Cosa';
+            }
+            talk(){
+                console.log('Owned by: ' + this.owner);
+            }
+        }
+
+        AHORA:
+        class CarlosThing {
+            owner = 'Carlos';
+        }
+
+        class Thing{
+            name = 'Cosa';
+            talk = () => {
+                console.log('Owned by: ' + this.owner);
+            }
+        }
