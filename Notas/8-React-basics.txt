@@ -1,0 +1,12 @@
+
+1: react es la librería que nos provee de todas las utilidades de React.
+2: reactDOM es la parte de react que se encarga de construir y manipular el DOM.
+
+React está orientado a componentes, así que, básicamente, todo lo que se hace es mediante componentes.
+Para ello, crearemos clases que extiendan de componentes. Estas clases tienen como requisito imprescindible devolver un HTML.
+    Comment1: El return de estas clases se puede encerrar entre () para que la respuesta sea multilinea y más legible.
+    Comment2: El return puede/es un JSX procesado por react. Por eso, aunque no se utilice directamente la librería de react, hay que importarla.
+
+
+ReactDOM se utiliza mediante un método básico que es render. En SPAs se utiliza en el nodo raíz y ya de forma automática procesa todo el árbol contenido.
+    : ReactDOM.render(<App />, document.getElementById('root'));
