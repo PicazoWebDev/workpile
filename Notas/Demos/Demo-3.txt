@@ -1,0 +1,1 @@
+Centralizar las tareas en el state de app.

@@ -1,0 +1,19 @@
+
+Por defecto los componentes reciben un argumento (que podemos llamar 'props' o como queramos), que será un objeto con todos los clave valor que le hayamos pasado como atributos a la etiqueta del componente.
+    ex: 
+        <Compo atr1="www" atr2=true />
+        dentro del componente podremos utilizar props.atr1 y props.atr2.
+
+Nota: En el caso de los componentes tipo clase utilizaremos THIS.PROPS.
+
+Además podemos pasar contenido (cualquiera) como dato entre los cierres de la etiqueta del compo:
+    <Compo atr1="www" atr2=true> <p> datos internos!</p> </Compo>
+    Para acceder a los datos internos tenemos que utilizar props.children.
+    ex: 
+        return (
+            <div>
+                {props.children}
+            </div>
+        )
+        => <div> <p> datos internos! </p> </div>
+

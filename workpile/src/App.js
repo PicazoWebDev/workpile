@@ -4,17 +4,20 @@ import "./App.css";
 import Task from "./Task";
 
 class App extends Component {
+  state = {
+    workpile: [
+      { name: "Tarea 1", assignedTo: "Carlos", status: "In progress" },
+    ],
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Task taskName="Tarea1" />
+        <Task
+          name={this.state.workpile[0].name}
+          assignedTo={this.state.workpile[0].assignedTo}
+          status={this.state.workpile[0].status}
+        />
       </div>
     );
   }
