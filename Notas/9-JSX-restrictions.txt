@@ -1,0 +1,6 @@
+Dentro del JSX hay restricciones.
+
+1: No se puede utilzar el atributo 'class' por ser una palabra clave de JS. En su lugar hay que utilizar 'className'.
+
+2: Solo podemos devolver un único elemento raíz por compoenente. Este puede contener anidado todo lo que sea, pero como raíz, solo uno.
+

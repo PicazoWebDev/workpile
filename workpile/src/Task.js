@@ -1,5 +1,11 @@
-class Task {
-  name = "my task name";
-}
+import React from "react";
 
-export default Task;
+const task = (props) => {
+  return (
+    <div className="task">
+      <p>{props.taskName}</p>
+    </div>
+  );
+};
+
+export default task;

@@ -3,9 +3,12 @@
 2: reactDOM es la parte de react que se encarga de construir y manipular el DOM.
 
 React está orientado a componentes, así que, básicamente, todo lo que se hace es mediante componentes.
-Para ello, crearemos clases que extiendan de componentes. Estas clases tienen como requisito imprescindible devolver un HTML.
+Para ello, crearemos clases que extiendan de componentes. Estas clases tienen como requisito imprescindible devolver un HTML en la función que implementan obligatoriamente: render().
+Como componentes que son, react llamará a render() para instaciar el componente en la interfaz y para ello, esta función debe devolver un HTML (o JSX).
     Comment1: El return de estas clases se puede encerrar entre () para que la respuesta sea multilinea y más legible.
-    Comment2: El return puede/es un JSX procesado por react. Por eso, aunque no se utilice directamente la librería de react, hay que importarla.
+    Comment2: El return puede/es un JSX procesado por react. Por eso, aunque no se utilice directamente la librería de react hay que importarla.
+    Internamente trata el código dentro del return del render como una consecución de instrucciones anidadas de React.createElement.
+
 
 
 ReactDOM se utiliza mediante un método básico que es render. En SPAs se utiliza en el nodo raíz y ya de forma automática procesa todo el árbol contenido.

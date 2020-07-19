@@ -1,0 +1,3 @@
+
+1 - Cambiar el componente task de un componente de tipo 'class' a uno funcional.
+2 - La información se debe pasar al componente para construirlo y es él quien debe procesarla en su template.
