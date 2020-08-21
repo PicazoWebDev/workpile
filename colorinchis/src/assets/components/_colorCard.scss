@@ -1,0 +1,23 @@
+.colorCard {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 31%;
+  padding: 25px;
+  margin: 0 1%;
+  border: 1px solid #222;
+  border-radius: 8px;
+
+  &__ball {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    color: white;
+  }
+}
