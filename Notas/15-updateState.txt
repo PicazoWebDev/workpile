@@ -9,9 +9,50 @@ Para ello se utiliza una función nativa de React llamada 'setState'.
         this.setState({
             data: 2
         })
-    Esto es correcto, pero lo mejor es utilizar los hooks: 'useState'
+
+[!] La llamada setState mergea los datos del estado, conservando aquellos que no se hayan incluido en la actualización.
+    ex:
+        this.state = {
+            data1: [...],
+            data2: {+++}
+        }
+        this.setState({
+            data1: [***]
+        })
+
+        ==>>> state = { data1 [***], data2: {+++}}  // Data2 no ha sido modificado.
+
+    Esto es correcto, pero lo mejor es utilizar los hooks: 'useState'.
 
 
 ===============
  HOOK useState
 ===============
+
+Programación funcional.
+En lugar de utilizar la extensión 'Component', importamos 'useState' del paquete de 'react'.
+useState es una función, a la que le pasamos los datos del estado y nos devuelve un array de dos items:
+    datos + función para actualizar los datos.
+Es particularmente útil desestructurar el array de vuelta en variables:
+
+const [colorsState, setColors] = useState ({colors: ---})
+
+[!] La llamada al setter de useState NO mergea los datos del estado, sustituye todo el modelo
+    ex:
+        const [myDataState, setMyDataState] = useState({
+            data1: [...],
+            data2: {+++}
+        })
+
+        setMyDataState({
+            data1: [***]
+        })
+
+        ==>>> state = { data1 [***]}  // Data2 ya no existe porque no formaba parte de la llamada al setter del useState.
+
+
+
+Con el método 'state' de los componentes basados en clase SOLO tenemos un estado.
+Con el método 'useState' de los funcionales, podemos declarar varios estados utilizando múltiples llamadas a useState.
+
+

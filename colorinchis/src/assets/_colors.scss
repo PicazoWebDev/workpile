@@ -1,0 +1,180 @@
+// optional get names: https://colornames.org/color/
+// http://chir.ag/projects/name-that-color
+
+// PURE COLORS:
+// Asociación que nombra los colores puros.
+// Se identifican todos los colores posibles a usar en el portal.
+// Solo se pueden utilizar como valores de color en esta scss
+$color-cobalt: #0000ff;
+$color-navy: #00008c;
+$color-lynch: #666d92;
+$color-ocean: #0000cc;
+$color-ocean02: #0101e4;
+$color-cornflower: #6884ff;
+$color-selago: #e5e5fd;
+
+$color-lilac: #f1f1fa;
+$color-athens: #ececef;
+$color-ghost: #c6c8d0;
+
+// State colors
+$color-olive: #589422;
+$color-red: #d00000;
+$color-tangerine: #f18f01;
+$color-dodger: #417cff;
+// Backgrounds
+$color-willowBrook: #e6efde;
+$color-wePeep: #f8d9d9;
+$color-halfColonial: #fdeed9;
+$color-zumthor: #ebf2ff;
+
+//Data colors
+$color-fuel: #f0aa30;
+$color-mandy: #e6457a;
+$color-electric-violet: #a12ee6;
+$color-turquoise: #2ddfd5;
+$color-pastel-green: #44e65a;
+// + $color-dodger
+
+// graphs
+// $color-graph-green: #4cba9a;
+// $color-graph-orange: #ed7d31;
+// $color-graph-violet: #9274c4;
+// $color-graph-yellow: #ffbd09;
+// $color-graph-blue: #6aa3d9;
+
+/*Colores por revisar su aplicación - no están en el libro de marca*/
+$color-primary-blue01: #0074e4;
+$color-primary-blue02: #edf5fd;
+$color-primary-blue03: #123361;
+$color-primary-blue04: #1b1829;
+$color-primary-strong: #0432ff;
+
+$color-secondary-grey01: #f1f1f1;
+$color-secondary-grey02: #65607b;
+$color-secondary-grey03: #4a4a4a;
+$color-secondary-grey04: #dadbe0;
+
+// Info
+// $success-light: #1b1b1b;
+// $success-dark: #55c2a4;
+// $danger-light: #f7e9e5;
+// $danger-dark: #be4c33;
+// $warning-light: #eab103;
+// $warning-dark: #fff2ca;
+// $info-light: #71aedf;
+// $info-dark: #2251b1;
+$color-online: #63bb07;
+$color-alert-red: #e21515;
+
+// Utils
+$color-none: transparent;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-light: #d4d7dd;
+$color-dark: #4c4e53;
+
+// ========================== //
+// SERES THEME SUBORDINATED   //
+// ========================== //
+
+// <<<< THEME COLORS MAP >>>>
+// Solo se pueden asignar ids de colores puros (arriba)
+// Definen la línea de la marca - Genéricos
+//---------
+// BRAND
+//---------
+$color-primary-brand: $color-cobalt;
+
+//---------
+// General
+//---------
+$body-background: $color-lilac;
+$color-container-bck: $color-white;
+$color-container-contrast-bck: $color-athens;
+$color-alert-font: $color-white;
+$color-alert-bck: $color-alert-red;
+
+//---------
+// Textos
+//---------
+// Fuentes en general
+$color-font: $color-lynch;
+$color-font-special: $color-cobalt;
+$color-font-highlight: $color-navy;
+
+//---------
+// Estados
+//---------
+
+$color-focus: $color-cornflower;
+$color-focus-alt: $color-dodger;
+$color-hover: $color-ocean02;
+$color-hover-alt: $color-selago;
+$color-active: $color-ocean;
+// El color elegido por la marca ofrece un contraste inaceptable
+// $color-disabled: $color-ghost;
+$color-disabled: $color-lynch;
+$color-disabled-bck: $color-athens;
+$color-error: $color-red;
+$color-error-bck: $color-wePeep;
+$color-success: $color-olive;
+$color-success-bck: $color-willowBrook;
+$color-warning: $color-tangerine;
+$color-warning-bck: $color-halfColonial;
+$color-info: $color-dodger;
+$color-info-bck: $color-zumthor;
+
+// <<<< THEME COMPONENTS >>>>
+// Solo puede asignar colores del theme map
+// Colores específicos a aplicar en determinados componentes
+
+// Titulos
+$color-title: $color-font-highlight;
+// Input, select, button, etc.
+$color-input-font: $color-font;
+$color-input-bck: $color-container-bck;
+$color-input-bck-focus: $color-container-contrast-bck;
+// Multiselect
+$color-mselect-font: $color-font;
+$color-mselect-bck: $color-container-bck;
+$color-mselect-selected: $color-font-special;
+$color-mselect-bck-selected: $color-lilac;
+// Labels
+$color-label: $color-font-highlight;
+// Main nav links
+$color-font-nav: $color-font-highlight;
+$color-font-breadcrumbs: $color-font-special;
+// Lines
+$color-border: $color-lynch;
+$color-border-alt: $color-athens;
+$color-border-special: $color-cobalt;
+$color-border-highlight: $color-navy;
+
+//---------
+// Botones
+//---------
+$color-button-font: $color-white;
+$color-button-bck: $color-primary-brand;
+$color-button-disabled-bck: $color-disabled-bck;
+//    --Light: Variante a medida para el portal
+$color-button-font--light: $color-primary-brand;
+$color-button-bck--light: $color-none;
+$color-button-font--light-hover: $color-primary-brand;
+$color-button-bck--light-hover: $color-hover-alt;
+$color-button-font--light-focus: $color-white;
+$color-button-bck--light-focus: $color-focus;
+$color-button-font--light-active: $color-white;
+$color-button-bck--light-active: $color-active;
+//    --Mini: Variante pequeña y con otro esquema de colores
+
+// ----------------------
+// COMPONENTES
+// ----------------------
+// Gráficas:
+$color-graph-base: $color-dodger;
+$color-graph-success: $color-pastel-green;
+$color-graph-error: $color-fuel;
+$color-graph-warning: $color-turquoise;
+$color-graph-02: $color-mandy;
+$color-graph-03: $color-electric-violet;

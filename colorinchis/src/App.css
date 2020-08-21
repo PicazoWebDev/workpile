@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .App {
   text-align: center; }
 
@@ -23,6 +24,12 @@
   to {
     transform: rotate(360deg); } }
 
+.catalogue {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+/*Colores por revisar su aplicación - no están en el libro de marca*/
 .colorCard {
   display: flex;
   justify-content: flex-start;
@@ -35,11 +42,12 @@
   margin: 0 1%;
   border: 1px solid #222;
   border-radius: 8px; }
-  .colorCard__ball {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 150px;
-    border-radius: 150px;
-    color: white; }
+
+.colorCard__ball {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  color: white; }

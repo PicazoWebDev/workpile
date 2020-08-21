@@ -1,55 +1,99 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
-// import "./styles.scss";
 import "./App.css";
 import ColorCard from "./components/ColorCard";
 
-class App extends Component {
-  state = {
+const app = (props) => {
+  const [brandState, setBrandState] = useState({
+    id: "Docapost",
+  });
+  const [colorsState, setColorsState] = useState({
     colors: [
       {
-        id: "Brand color",
+        id: "Brand color standard",
         name: "Cobalt",
         value: "#0000ff",
         desc: "Color primario de la marca",
       },
+      {
+        id: "Brand color alt",
+        name: "Cobalt - light",
+        value: "#417cff",
+        desc: "Color primario en claro",
+      },
+      {
+        id: "Brand color opp",
+        name: "Cobalt - dark",
+        value: "#00008c",
+        desc: "Color primario en claro",
+      },
     ],
-  };
+  });
 
-  setColor = () => {
-    this.setState({
+  const setColor = () => {
+    setBrandState({
+      id: "Santander",
+    });
+    setColorsState({
       colors: [
         {
           id: "Brand color",
-          name: "Santander",
+          name: "SuperRed",
+          value: "#ff0000",
+          desc: "Color primario de la marca",
+        },
+        {
+          id: "Brand color alt",
+          name: "Notanred",
           value: "#ec0000",
+          desc: "Color primario de la marca",
+        },
+        {
+          id: "Brand color dark",
+          name: "Dark",
+          value: "#aa2222",
           desc: "Color primario de la marca",
         },
       ],
     });
   };
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Colorinchis</h1>
-        </header>
-        <p className="App-intro">
-          The colorinchis project to handle cool CSS & designs
-        </p>
 
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1 className="App-title">Welcome to Colorinchis</h1>
+      </header>
+      <p className="App-intro">
+        The colorinchis project to handle cool CSS & designs
+      </p>
+
+      <h2>{brandState.id}</h2>
+
+      <div className="catalogue">
         <ColorCard
-          id={this.state.colors[0].id}
-          name={this.state.colors[0].name}
-          value={this.state.colors[0].value}
-          desc={this.state.colors[0].desc}
+          id={colorsState.colors[0].id}
+          name={colorsState.colors[0].name}
+          value={colorsState.colors[0].value}
+          desc={colorsState.colors[0].desc}
+        />
+        <ColorCard
+          id={colorsState.colors[1].id}
+          name={colorsState.colors[1].name}
+          value={colorsState.colors[1].value}
+          desc={colorsState.colors[1].desc}
+        />
+        <ColorCard
+          id={colorsState.colors[2].id}
+          name={colorsState.colors[2].name}
+          value={colorsState.colors[2].value}
+          desc={colorsState.colors[2].desc}
         />
 
-        <button onClick={this.setColor}>Set red color</button>
+        <button onClick={setColor}>Set red color</button>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-export default App;
+export default app;
