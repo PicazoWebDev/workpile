@@ -5,11 +5,13 @@ import React from "react";
 //   name: string;
 //   desc: string;
 //   value: string;
+//   hideItem: function;
+//   removeItem: function;
 // }
 
 const colorCard = (props) => {
   // mapeamos las props
-  const { id, name, desc, value } = props;
+  const { id, name, desc, value, hideItem } = props;
 
   return (
     <div className="colorCard">
@@ -19,6 +21,7 @@ const colorCard = (props) => {
       <div className="colorCard__ball" style={{ backgroundColor: value }}>
         {value}
       </div>
+      <button onClick={() => hideItem(id)}>Ocultar</button>
     </div>
   );
 };

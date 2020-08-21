@@ -1,0 +1,41 @@
+
+Podemos para métodos entre componentes igual que los atributos (se pasan por referencia; los ejecuta el padre).
+
+Para pasar datos entre ellos podemos hacerlo de varias formas:
+
+1. Podemos llamar al método utilizando '.bind(args)' de forma que forzamos los parámetros con los que deberá llamarse al método
+    ex: Class Component:
+        this.state = {
+            myName: 'nombre';
+        }
+
+        const setName = (name) => {
+            this.setState({
+                myName: name
+            });
+        }
+
+        return (
+            <ChildCompo changeName={this.setName.bind(this, 'OtroNombre')} />
+        )
+    
+    Cuando en el ChildCompo tengamos algo del tipo:
+        <button onClick=this.props.changeName> Cambiar de nombre </button>
+    El evento asignará automáticamente el valor 'OtroNombre'
+
+    
+    
+    Otra forma es utilizar en el atributo una función anónima pero será MENOS EFICIENTE
+        => changeName = {()=> this.setName('OtroNombre')}
+
+
+TWO WAY BINDING
+
+Se puede hacer una asociación 'two way' de datos combinando la llamada al método que definamos -setState- en el onChange de un input (ex) con el value.
+    const [nameState, setNameState] = useState ('Carlos');
+    
+    const setName (event) => {
+        setNameState(event.target.value);
+    }
+    
+    <input onChange=setName value=nameState />

@@ -55,4 +55,14 @@ const [colorsState, setColors] = useState ({colors: ---})
 Con el método 'state' de los componentes basados en clase SOLO tenemos un estado.
 Con el método 'useState' de los funcionales, podemos declarar varios estados utilizando múltiples llamadas a useState.
 
+---------------------------------------------------------------------------------------------------------------------
+
+Es interesante identificar que deberíamos construir dos tipos de componentes:
+    Los 'stateful'/smart
+    Los 'stateless'/presentational/dumb
+
+Los primeros tienen lógica y manipulan el estado de los datos.
+Los segundos son solo componentes visuales que no implementan ninguna lógica.
+
+De esta manera, concentramos la lógica en menos componentes teniendo más claro dónde se realizan las operaciones, código más comprensible y mantenible.
 

@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 25px;
+}
+
+.App-title {
+  padding: 25px 12px;
+  margin-bottom: 30px;
+  background-color: #000000;
+  color: lime;
+}
+
+.App-userOutput__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.App-userOutput {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #222;
+  margin: 30px;
+}
+
+.App-userOutput__username {
+  display: block;
+  color: #0000cc;
+  font-family: "Consolas";
+  font-size: 18px;
+  margin: 0 12px 20px;
+  text-decoration: underline;
+}
