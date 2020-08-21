@@ -15,6 +15,19 @@ class App extends Component {
       },
     ],
   };
+
+  setColor = () => {
+    this.setState({
+      colors: [
+        {
+          id: "Brand color",
+          name: "Santander",
+          value: "#ec0000",
+          desc: "Color primario de la marca",
+        },
+      ],
+    });
+  };
   render() {
     return (
       <div className="App">
@@ -32,6 +45,8 @@ class App extends Component {
           value={this.state.colors[0].value}
           desc={this.state.colors[0].desc}
         />
+
+        <button onClick={this.setColor}>Set red color</button>
       </div>
     );
   }

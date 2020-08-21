@@ -1,0 +1,17 @@
+
+
+Para modificar el estado no se puede hacer una asignación directa de datos, puesto que no se actualizará la vista.
+    ex:
+        this.state.data = '2' =>>> No actualizará data en la vista.
+
+Para ello se utiliza una función nativa de React llamada 'setState'.
+    ex:
+        this.setState({
+            data: 2
+        })
+    Esto es correcto, pero lo mejor es utilizar los hooks: 'useState'
+
+
+===============
+ HOOK useState
+===============
