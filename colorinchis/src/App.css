@@ -29,6 +29,14 @@
   flex-direction: row;
   flex-wrap: wrap; }
 
+.button {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #eee;
+  background-color: white;
+  color: #0000ec;
+  cursor: pointer; }
+
 /*Colores por revisar su aplicación - no están en el libro de marca*/
 .colorCard {
   display: flex;

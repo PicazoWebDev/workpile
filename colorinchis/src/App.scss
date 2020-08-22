@@ -37,5 +37,14 @@
   flex-wrap: wrap;
 }
 
+.button {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #eee;
+  background-color: white;
+  color: #0000ec;
+  cursor: pointer;
+}
+
 @import "./assets/_colors.scss";
 @import "./assets/components/_colorCard.scss";

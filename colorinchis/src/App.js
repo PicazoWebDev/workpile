@@ -114,9 +114,10 @@ const app = (props) => {
           show={colorsState.colors[2].show}
           hideItem={hideColor}
         />
-
-        <button onClick={setColor}>Set red color</button>
       </div>
+      <button className="button" onClick={setColor}>
+        Set red color
+      </button>
     </div>
   );
 };
