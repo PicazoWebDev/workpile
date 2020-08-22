@@ -64,18 +64,35 @@ const app = (props) => {
     });
   };
 
-  const hideColor = (colorId) => {
-    let newColors = colorsState.colors;
-    const targetIndex = newColors.findIndex((color) => color.id === colorId);
-    newColors[targetIndex].show = false;
-    setColorsState({ colors: newColors });
-  };
+  // const removeColorHandler = (colorId) => {
+  //   setColorsState({
+  //     colors: colorsState.colors.filter((color) => color.id !== colorId),
+  //   });
+  // };
 
-  const removeColor = (colorId) => {
+  const removeColorHandler = (colorIndex) => {
+    let colors = colorsState.colors;
+    colors.splice(colorIndex, 1);
     setColorsState({
-      colors: colorsState.colors.filter((color) => color.id !== colorId),
+      colors: colors,
     });
   };
+
+  const setColorCodeHandler = (event, colorIndex) => {
+    let color = { ...colorsState.colors[colorIndex] };
+    color.value = event.target.value;
+
+    let colors = [...colorsState.colors];
+    colors[colorIndex] = color;
+
+    setColorsState({ colors: colors });
+  };
+
+  const intro = (
+    <p className="App-intro">
+      The colorinchis project to handle cool CSS & designs
+    </p>
+  );
 
   return (
     <div className="App">
@@ -83,37 +100,24 @@ const app = (props) => {
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-title">Welcome to Colorinchis</h1>
       </header>
-      <p className="App-intro">
-        The colorinchis project to handle cool CSS & designs
-      </p>
+      {intro}
 
       <h2>{brandState.id}</h2>
 
       <div className="catalogue">
-        <ColorCard
-          id={colorsState.colors[0].id}
-          name={colorsState.colors[0].name}
-          value={colorsState.colors[0].value}
-          desc={colorsState.colors[0].desc}
-          show={colorsState.colors[0].show}
-          hideItem={hideColor}
-        />
-        <ColorCard
-          id={colorsState.colors[1].id}
-          name={colorsState.colors[1].name}
-          value={colorsState.colors[1].value}
-          desc={colorsState.colors[1].desc}
-          show={colorsState.colors[1].show}
-          hideItem={hideColor}
-        />
-        <ColorCard
-          id={colorsState.colors[2].id}
-          name={colorsState.colors[2].name}
-          value={colorsState.colors[2].value}
-          desc={colorsState.colors[2].desc}
-          show={colorsState.colors[2].show}
-          hideItem={hideColor}
-        />
+        {colorsState.colors.map((color, index) => {
+          return color.show ? (
+            <ColorCard
+              key={color.id}
+              id={color.id}
+              name={color.name}
+              value={color.value}
+              desc={color.desc}
+              removeItem={() => removeColorHandler(index)}
+              setColorCode={(event) => setColorCodeHandler(event, index)}
+            />
+          ) : null;
+        })}
       </div>
       <button className="button" onClick={setColor}>
         Set red color

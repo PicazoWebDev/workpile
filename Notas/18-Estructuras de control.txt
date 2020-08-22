@@ -1,0 +1,66 @@
+
+
+Para establecer estructuras de control hay que recordar dos cosas:
+    1: El código es JSX, por lo que internamente es JS utilizando recursivamente el método React.createElement() sobre aquellos elementos que sean html
+    2: Al añadir {} el código interior será JS.
+    Nota: dentro del código {} solo se admiten sentecias simples, no bloques.
+
+De esta forma, se puede establecer si algo se renderiza o no con un condicional ternario (un 'if' no se puede utilizar porque es una sentencia de bloque)
+
+    <div>
+        { this.miVariableBooleana 
+            ? <ComponenteGuays />
+            : null
+        }
+    </div>
+
+
+Otra forma de hacerlo es aprovechando la ventaja de JSX y la sentencia 'return'.
+Antes del return, en la parte de JS, podemos declarar una variable a la que le asignamos un valor JSX utilizando condicionales estándar.
+Luego, podemos introducir el JSX de esta variable en la plantilla del return.
+Este método dice ser más elegante y recomendarlo... yo no estoy tan seguro de eso.
+    ex:
+        let demo = null;
+        if (myBool){
+            demo = (
+                <div> HTML! </div>
+            )
+        }
+
+        return (
+            {demo}
+        )
+
+FOR (LISTAS):
+    Para la renderización de listas utilizaremos los mismos principios.
+    Dentro de unas {} el código es JS nativo. Ahí, haremos uso, por ejemplo, de la función 'map' de los arrays para devolver lo que nos interesa.
+        ex:
+            colores = [{...}, {...}, ...]
+            return(
+                {
+                    colores.map(color => {
+                        return <ColorComponente hex={color.hexCode} />
+                    })
+                }
+            )
+
+    Es interesante tener en cuenta que dentro del método 'map' podemos pasar como segundo argumento 'index', que podemos utilizar en las llamadas para identificar el elemento en concreto.
+        ex:
+            colores = [{...}, {...}, ...]
+            return(
+                {
+                    colores.map( (color, index) => {
+                        return <ColorComponente hex={color.hexCode} removeItem={()=>removeItem(index)} />
+                    })
+                }
+            )
+
+    La generación de listas requiere de añadir un atributo 'key' único para item. Esto es para que React sea capaz de manejar la lista de forma mucho más eficiente al tener cada item perfectamente identificado. Si los elementos tienen un 'id' (que suelen tenerlo) es lo mejor. En caso contrario, evitar la tentación de utilizar el 'index' del map porque el index de un mismo elemento cambia si la lista cambia por cualquier motivo.
+        ex:
+             return(
+                {
+                    colores.map( (color, index) => {
+                        return <span key={color.id} removeItem={()=>removeItem(index)}> {color.hexCode}  </span>
+                    })
+                }
+            )

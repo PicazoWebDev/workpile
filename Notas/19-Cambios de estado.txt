@@ -1,0 +1,12 @@
+
+
+A la hora de modificar los datos lo mejor es:
+    1. Crear una copia de los datos (del estado)
+    2. Modificar la copia
+    3. Asignar la copia como nuevo estado.
+
+    Esto en lugar de modificar los datos del estado, lo que podría hacer la aplicación inestable.
+
+=> let myDataArray = [...myDataArrayState];
+    myDataArray.splice(index, 1) // o cualquier otra modificación
+    setMyDataArrayState(myDataArray);

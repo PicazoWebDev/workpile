@@ -1,5 +1,5 @@
 
-Podemos para métodos entre componentes igual que los atributos (se pasan por referencia; los ejecuta el padre).
+Podemos pasar métodos entre componentes igual que los atributos (se pasan por referencia; los ejecuta el padre).
 
 Para pasar datos entre ellos podemos hacerlo de varias formas:
 
@@ -39,3 +39,13 @@ Se puede hacer una asociación 'two way' de datos combinando la llamada al méto
     }
     
     <input onChange=setName value=nameState />
+
+
+PROTEGER EL VALOR 'THIS'
+Hay dos formas de definir un método:
+    1> miMetodo () {...}
+    2> miMetodo = () => {...}
+
+La diferencia es que con la segunda manera nos aseguramos que en el desarrollo de la implementación del método 'this' tendrá como valor la clase o la función del componente donde está implementado el método.
+En el primer caso, en el interior del método 'this' podrá tomar otros valores en función de quién realice la llamada.
+Por ello es siempre recomendable declarar los métodos -por lo menos los que se vayan a pasar como referencia- como ArrowFunctions.

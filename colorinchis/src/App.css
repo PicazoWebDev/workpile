@@ -32,10 +32,16 @@
 .button {
   padding: 10px;
   margin: 10px;
-  border: 1px solid #eee;
+  border: 1px solid #888;
   background-color: white;
   color: #0000ec;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 3px; }
+
+.button:hover {
+  background-color: #00008a;
+  color: white; }
 
 /*Colores por revisar su aplicación - no están en el libro de marca*/
 .colorCard {
@@ -59,3 +65,11 @@
   height: 150px;
   border-radius: 150px;
   color: white; }
+
+.colorCard__hexInput {
+  max-width: 120px;
+  padding: 4px;
+  border-radius: 3px;
+  border: 1px solid white;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6); }

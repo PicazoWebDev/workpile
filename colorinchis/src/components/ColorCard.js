@@ -11,23 +11,23 @@ import React from "react";
 
 const colorCard = (props) => {
   // mapeamos las props
-  const { id, name, desc, value, show, hideItem } = props;
-
-  let style = {};
-  if (!show) {
-    style = { display: "none" };
-  }
+  const { id, name, desc, value, removeItem, setColorCode } = props;
 
   return (
-    <div className="colorCard" style={style}>
+    <div className="colorCard">
       <p>{id}</p>
       <p>{name}</p>
       <p>{desc}</p>
-      <p>show: {show + ""}</p>
       <div className="colorCard__ball" style={{ backgroundColor: value }}>
-        {value}
+        <input
+          maxLength="7"
+          className="colorCard__hexInput"
+          type="text"
+          value={value}
+          onChange={setColorCode}
+        />
       </div>
-      <button className="button" onClick={() => hideItem(id)}>
+      <button className="button" onClick={removeItem}>
         Ocultar
       </button>
     </div>
