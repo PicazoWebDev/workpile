@@ -1,0 +1,48 @@
+
+lessons: 64 - 76
+Radium y StyleComponents son dos librerías (independientes la una de la otra) que nos permiten trabajar con las CSS de los componentes en el JS.
+Todo lo que tenga que ver con estas dos librerías apesta. Rompe por completo la arquitectura de estilos lógica, reutilizable y reescalable.
+
+CSS Modules es quizá algo más interesante.
+Lo que hace es permitir transformar los archivos CSS en módulos JS, que se pueden importar y asignar sus propiedades -clases- a los componentes.
+Para cada componente donde se utilice el módulo se generará un bloque CSS con un id único que se asegurará de que no se produzcan conflictos.
+
+[CONFIGURACIÓN]
+Primero hay que acceder a la configuración del proyecto para modificar algunas cosas.
+Para acceder a la config tenemos que ejecutar 'npm eject', que expone todos los archivos de configuración que está utilizando por debajo 'react-scripts' para que todo funcione.
+
+1. En la carpeta de config encontraremos los archivos de configuración de webpack:
+    > webpack.config.dev.js
+    > webpack.config.prod.js
+
+2. En ese archivo encontramos que en una operación 'test: /\.css$/ se está utilizando 'css-loader', que tiene un campo 'options'
+    > loader: require.resolve('css-loader'),
+      options: {
+          importLoaders: 1,
+      }
+
+3: En ese objeto de opciones añadimos:
+    > loader: require.resolve('css-loader'),
+      options: {
+          importLoaders: 1,
+          modules: true,
+          localIdentName : '[name]__[local]__[hash:base64:5]',
+          minimize: true,
+          sourceMap: shouldUseSourceMap
+      }
+
+> De esta forma los css Modules que va a generar creará clases del tipo: .App__button__j%$2M
+
+[APLICACIÓN]
+En lugar de importar los CSS en el componente tipo:
+    > import 'button.css'
+le hacemos como un módulo:
+    > import classes from 'button.css'
+
+
+Luego, en lugar de utilizar las clases directamente que están en el componente tipo:
+    > <button className="button--red"> ...
+lo hacemos como atributos del módulo:
+    > <button className={classes.button--red}>
+
+Nota: button.css contiene la clase: .button--red{ ... }
