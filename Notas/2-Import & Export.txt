@@ -8,6 +8,7 @@ Import & export:
                 name: 'Max'
             }
             export default person;
+
     En este caso, al importarlo siempre vamos a importar el mismo elemento, por lo que NO es necesario llamarlo por su 'nombre de pila' (person). Además lo importaremos sin encerrar el nombre que le vamos a dar entre {}
     Al importarlo podemos hacerlo de las siguientes maneras:
         ex:
@@ -35,6 +36,6 @@ Import & export:
             import {person as persona, dog as perro} from './family.js';
     Cuando tenemos varios elementos también podemos importalos como un objeto con propiedades:
         ex:
-            import * as familia form '.family.js';
+            import * as familia from '.family.js';
             familia.person.talk();
             familia.dog.bark();

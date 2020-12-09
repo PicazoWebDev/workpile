@@ -4,7 +4,8 @@ Funciones interesantes de los arrays:
 
     You'll see me use them quite a bit since a lot of React concepts rely on working with arrays (in immutable ways).
 
-    The following page gives a good overview over the various methods you can use on the array prototype - feel free to click through them and refresh your knowledge as required: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+    The following page gives a good overview over the various methods you can use on the array prototype - feel free to click through them and refresh your knowledge as required: 
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
     Particularly important in this course are:
 

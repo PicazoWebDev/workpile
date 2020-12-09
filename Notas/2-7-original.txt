@@ -138,6 +138,8 @@ class Person extends Human {
 const person = new Person();
 person.printMyName();
 console.log(person.species); // prints 'human'
+
+
 Spread & Rest Operator
 The spread and rest operators actually use the same syntax: ... 
 

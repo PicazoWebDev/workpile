@@ -31,11 +31,6 @@
   }
 }
 
-.catalogue {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
 .button {
   padding: 10px;
@@ -54,4 +49,6 @@
 }
 
 @import "./assets/_colors.scss";
+@import "./assets/components/_menu.scss";
+@import "./assets/components/_catalogue.scss";
 @import "./assets/components/_colorCard.scss";

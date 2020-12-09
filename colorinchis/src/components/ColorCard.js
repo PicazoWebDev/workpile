@@ -14,21 +14,21 @@ const colorCard = (props) => {
   const { id, name, desc, value, removeItem, setColorCode } = props;
 
   return (
-    <div className="colorCard">
+    <div className="bcm-colorCard">
       <p>{id}</p>
       <p>{name}</p>
       <p>{desc}</p>
-      <div className="colorCard__ball" style={{ backgroundColor: value }}>
+      <div className="bcm-colorCard__ball" style={{ backgroundColor: value }}>
         <input
           maxLength="7"
-          className="colorCard__hexInput"
+          className="bcm-colorCard__hexInput"
           type="text"
           value={value}
           onChange={setColorCode}
         />
       </div>
       <button className="button" onClick={removeItem}>
-        Ocultar
+        Eliminar
       </button>
     </div>
   );

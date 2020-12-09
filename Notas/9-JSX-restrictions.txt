@@ -4,3 +4,4 @@ Dentro del JSX hay restricciones.
 
 2: Solo podemos devolver un único elemento raíz por compoenente. Este puede contener anidado todo lo que sea, pero como raíz, solo uno.
 
+""

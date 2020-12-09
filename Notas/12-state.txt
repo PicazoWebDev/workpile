@@ -1,4 +1,3 @@
-
 Normalmente dentro de una función JS utilizaríamos los datos declarando variables en su interior del tipo:
     ex: 
         class App extends Component{
@@ -24,7 +23,7 @@ PERO TAMPOCO!
 Al extender de un 'Component' funciona de otra manera.
 Igual que tenemos las props, que proceden de fuera del componente y que son recibidas como parámetros, tenemos la palabra reservada:
     STATE
-para la gestión de datos DENTRO del propio componente.
+para la gestión de datos de forma INTERNA al propio componente.
 
 De todas formas, con la introducción de HOOKS esto se trabaja también de otra manera /ver más adelante...
 
@@ -40,4 +39,5 @@ Dentro de la definición de la clase/función, la palabra 'this' se refiere a la
             }
         }
 
-State se utiliza como una variable normal, pero lo que tiene de especial es que cuando se modifica es cuando React reacciona para volver a renderizar el DOM. De otra manera no actualiza la vista.
+State se utiliza como una variable normal, pero lo que tiene de especial es que cuando se modifica es cuando React reacciona para volver a renderizar el DOM. De otra manera no actualiza la vista. Es la variable que React "vigila" del componente.
+

@@ -24,11 +24,6 @@
   to {
     transform: rotate(360deg); } }
 
-.catalogue {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
-
 .button {
   padding: 10px;
   margin: 10px;
@@ -38,13 +33,22 @@
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 3px; }
-
-.button:hover {
-  background-color: #00008a;
-  color: white; }
+  .button:hover {
+    background-color: #00008a;
+    color: white; }
 
 /*Colores por revisar su aplicación - no están en el libro de marca*/
-.colorCard {
+.bcm-menu {
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px 15px; }
+
+.bcm-catalogue {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.bcm-colorCard {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -56,20 +60,18 @@
   margin: 0 1%;
   border: 1px solid #222;
   border-radius: 8px; }
-
-.colorCard__ball {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-  height: 150px;
-  border-radius: 150px;
-  color: white; }
-
-.colorCard__hexInput {
-  max-width: 120px;
-  padding: 4px;
-  border-radius: 3px;
-  border: 1px solid white;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.6); }
+  .bcm-colorCard__ball {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    color: white; }
+  .bcm-colorCard__hexInput {
+    max-width: 120px;
+    padding: 4px;
+    border-radius: 3px;
+    border: 1px solid white;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6); }

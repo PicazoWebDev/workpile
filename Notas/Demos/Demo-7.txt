@@ -1,0 +1,7 @@
+
+1-Reestructurar modelo de datos
+2-Añadir dumb-compo Header
+3-Añadir dumb-compo menú seleccionador de proyecto
+4-Corregir uso de state; se modificaban los datos directamente antes de usar 'setState'
+5-Utilizar smart-compo (class) para el gestor de colores (catálogo)
+6-Actualizar la lista de marcas al realizar algún cambio (en el futuro se utilizará el useEffect)
